@@ -9,6 +9,7 @@ $secondary-color: rgb(72, 72, 72);
 
 body {
   margin: 0;
+  background-color: rgba(238, 238, 238, 0.9);
 }
 
 @mixin subtitle($color, $font-size) {
@@ -25,12 +26,11 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "brand brand brand"
                         "description description description"
                         "articles articles articles";
-  background-color: rgba(238, 238, 238, 0.9);
 }
 
 h1, h2 {
@@ -118,6 +118,8 @@ h1, h2 {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 300px));
   grid-template-rows: repeat(3, auto);
+  grid-auto-flow: row dense;
+  padding: 15px;
   grid-gap: 20px;
 }
 
@@ -157,7 +159,7 @@ h1, h2 {
 // Media queries for smaller devices
 @media screen and (max-width: 800px) {
   .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
   }
 
   .brand {
