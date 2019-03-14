@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Font variables
+$roboto-font: 'Roboto', sans-serif;
+
+// Colors
+$primary-color: rgb(244, 191, 66);
+$secondary-color: rgb(72, 72, 72);
+
+body {
+  margin: 0;
+}
+
+@mixin subtitle($color, $font-size) {
+  color: $color;
+  font-family: $roboto-font;
+  font-size: $font-size;
+  grid-row: 3;
+}
+
+@mixin article ($background-color) {
+  padding: 30px 30px 0;
+  background-color: $background-color
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "brand brand brand"
+                        "description description description"
+                        "articles articles articles";
+  background-color: rgba(238, 238, 238, 0.9);
+}
+
+h1, h2 {
+  font-family: $roboto-font;
+  color: $secondary-color;
+}
+
+.brand {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: "title btn btn"
+                        "icons icons icons";
+  background:$primary-color;
+}
+
+.title-container {
+  align-self: center;
+  padding: 20px;
+  grid-area: title;
+}
+
+.brand-image {
+  width: 150px;
+}
+
+.btn-container {
+  padding: 20px;
+  justify-self: end;
+  grid-area:btn;
+}
+
+.btn-login {
+  width: 160px;
+  height: 60px;
+  font-size: 18px;
+  color: #484848;
+  border: 3px solid $secondary-color;
+  background: transparent;
+  border-radius: 30px;
+}
+
+.btn-login:focus {
+  outline: none;
+}
+
+.subtitle {
+  @include subtitle(white, 20px);
+}
+
+#sunset {
+  width: 300px;
+  margin-right: 120px;
+}
+#lighthouse {
+  width: 300px;
+}
+
+.icon-container {
+  // grid-column: 2;
+  justify-self: end;
+  grid-area: icons;
+}
+
+.description {
+  justify-self: center;
+  grid-column: 2;
+  text-align: center;
+  padding: 15px;
+}
+
+#desc-subtitle {
+  @include subtitle(#484848, 20px)
+}
+
+.article-title {
+  color: rgba(245, 245, 245, 0.9);
+}
+
+.articles-container {
+  grid-column: 1/-1;
+  grid-row: 3;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(150px, 300px));
+  grid-template-rows: repeat(3, auto);
+  padding: 20px;
+  grid-gap: 20px;
+}
+
+.article-img {
+  max-width: 100%;
+}
+#article-one {
+  @include article(rgb(91,204,176))
+}
+
+#article-two {
+  @include article(rgb(193,167,138));
+}
+
+#article-three {
+  @include article(rgb(91,184,221));
+}
+
+#article-four {
+  @include article(rgb(248,178,56));
+  grid-column: span 2;
+}
+
+#article-five {
+  @include article(rgb(244,126,84));
+}
+
+#article-six {
+  @include article(rgb(163,205,165));
+}
+
+#article-seven {
+  @include article(rgb(132,157,154));
+  grid-column: span 2;
+}
+
+// Media queries for smaller devices
+@media screen and (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title"
+                          "btn"
+                          "icons"
+  }
+
+  .btn-container {
+    justify-self: start;
+  }
+  
+  .icon-container {
+    justify-self: center;
+  }
+
+  .title-container { 
+    justify-self: center;
+  }
+}
