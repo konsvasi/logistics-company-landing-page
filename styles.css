@@ -101,7 +101,6 @@ h1, h2 {
   display: grid;
   grid-template-columns: repeat(3, minmax(150px, 300px));
   grid-template-rows: repeat(3, auto);
-  padding: 20px;
   grid-gap: 20px;
 }
 
@@ -110,38 +109,38 @@ h1, h2 {
 }
 
 #article-one {
-  padding: 30px 30px 0;
+  padding: 25px;
   background-color: #5bccb0;
 }
 
 #article-two {
-  padding: 30px 30px 0;
+  padding: 25px;
   background-color: #c1a78a;
 }
 
 #article-three {
-  padding: 30px 30px 0;
+  padding: 25px;
   background-color: #5bb8dd;
 }
 
 #article-four {
-  padding: 30px 30px 0;
+  padding: 25px;
   background-color: #f8b238;
   grid-column: span 2;
 }
 
 #article-five {
-  padding: 30px 30px 0;
+  padding: 25px;
   background-color: #f47e54;
 }
 
 #article-six {
-  padding: 30px 30px 0;
+  padding: 25px;
   background-color: #a3cda5;
 }
 
 #article-seven {
-  padding: 30px 30px 0;
+  padding: 25px;
   background-color: #849d9a;
   grid-column: span 2;
 }
